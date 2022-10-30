@@ -5,10 +5,15 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('recipe', {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      // type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      // defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
+      // get(){
+      //   return `db-${this.id}`
+      // }
     },
     nombre: {
       type: DataTypes.STRING,
@@ -26,6 +31,9 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING
     }
   },{
-    timestamps: false
+    timestamps: false,
+    // timestamps: true,
+    // createdAt: 'creado',
+    // updatedAt: false
   });
 };
