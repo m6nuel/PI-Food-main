@@ -5,14 +5,14 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('recipe', {
     id: {
-      // type: DataTypes.UUID,
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      // defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
+      // type: DataTypes.STRING,
+      // autoIncrement: true,
       // get(){
-      //   return `db-${this.id}`
+      //   return `db-${this.getDataValue('id')}`
       // }
     },
     nombre: {
