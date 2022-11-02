@@ -1,7 +1,10 @@
 import React from 'react'
+import { SearchRecipe } from './SearchRecipe'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <SearchRecipe />
+    </div>
   )
 }
