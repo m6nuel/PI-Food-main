@@ -15,7 +15,8 @@ export default function rootReducers ( state = initialState, { type, payload } )
             }
         case GET_DIETS:
             return {
-                state
+                ...state,
+                diets: payload
             }
             
         
