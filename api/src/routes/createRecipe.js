@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
     try {
         let { nombre, resumen, nivelDeComida, pasoAPaso, dieta } = req.body
 
-        let newRecipe = await Recipe.create({
+            let newRecipe = await Recipe.create({
             nombre,
             resumen,
             nivelDeComida,
@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
             where: {nombre: dieta}
         })
         // console.log(dietDB)
-        console.log(newRecipe.dataValues.nombre)
+        // console.log(newRecipe.dataValues.nombre)
         newRecipe.addDiet(dietDB);
         console.log(newRecipe)
         res.status(200).send(newRecipe);

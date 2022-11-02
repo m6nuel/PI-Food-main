@@ -6,6 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define('diet', {
     nombre: {
       type: DataTypes.STRING,
+      // type: DataTypes.ARRAY( DataTypes.ARRAY ),
       allowNull: false,
     },
   },{

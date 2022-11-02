@@ -24,7 +24,7 @@ const { conn, Diet } = require('./src/db.js');
 conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
-    const diets = ["gluten free"];
-    diets.forEach(async (element) => await Diet.create({nombre: element}));
+    const diet = ["gluten free"];
+    diet.forEach(async (element) => await Diet.create({nombre: element}));
   });
 });
