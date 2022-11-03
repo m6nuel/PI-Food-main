@@ -21,7 +21,10 @@ export const Detail = () => {
         image={ detail.imagen }
         nombre={ detail.nombre }
         tipoDieta={ detail.tipoDieta }
+        tipoPlato={ detail.tipoPlato }
         resumen={ detail.resumen }
+        nivelDeComida={ detail.nivelDeComida }
+        pasoAPaso={ detail.pasoAPaso }
       />
     </>
   )

@@ -14,7 +14,7 @@ export const Home = () => {
       {
         recipes?.map( (recipe, i) => {
           return (
-            <Link to={`/detail/${recipe.id}`}>
+            <Link key={i} to={`/detail/${recipe.id}`}>
               <Card 
                 key={i}
                 id={ recipe.id }
