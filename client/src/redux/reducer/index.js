@@ -1,4 +1,4 @@
-import { GET_DIETS, GET_RECIPES } from "../types";
+import { GET_DIETS, GET_RECIPES, GET_RECIPE_ID } from "../types";
 
 const initialState = {
     recipes: [
@@ -2416,7 +2416,8 @@ const initialState = {
             "id": 10,
             "nombre": "fodmap friendly"
           }
-    ]
+    ],
+    detail: []
 }
 
 export default function rootReducers ( state = initialState, { type, payload } ) {
@@ -2432,7 +2433,11 @@ export default function rootReducers ( state = initialState, { type, payload } )
                 ...state,
                 // diets: payload
             }
-            
+        case GET_RECIPE_ID:
+            return {
+                ...state,
+                detail: payload
+            }
         
     
         default:

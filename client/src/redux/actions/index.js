@@ -1,5 +1,5 @@
 import { apiFood } from "../../api"
-import { GET_DIETS, GET_RECIPES } from "../types";
+import { GET_DIETS, GET_RECIPES, GET_RECIPE_ID } from "../types";
 
 export const getAllRecipes = () => {
     return async (dispatch) => {
@@ -21,4 +21,19 @@ export const getAllDiets = () => {
         })
     }
 
+}
+
+export const getRecipebyId = (id) => {
+    return async (dispatch) => {
+        try {
+            let {data} = await apiFood.get(`/recipes/${id}`);
+            console.log(data[0]);
+            return dispatch({
+                type: GET_RECIPE_ID,
+                payload: data[0]
+            })            
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
