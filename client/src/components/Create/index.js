@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { createRecipe } from '../../redux/actions';
 
 export const Create = () => {
-
+  
+  const dispatch = useDispatch();
   const { diets } = useSelector( state => state )
 
   const [form, setForm] = useState({
@@ -31,6 +33,7 @@ export const Create = () => {
     e.preventDefault();
     console.log('Receta Creada');
     console.log(form)
+    dispatch( createRecipe(form) );
   }
 
   return (

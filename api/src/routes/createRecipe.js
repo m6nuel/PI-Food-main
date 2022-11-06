@@ -11,12 +11,12 @@ router.post('/', async (req, res) => {
             nombre,
             resumen,
             nivelDeComida,
-            pasoAPaso,
+            pasoAPaso
         })
         let dietDB = await Diet.findAll({ 
             where: {nombre: dieta}
         })
-        // console.log(dietDB)
+        console.log(dietDB)
         // console.log(newRecipe.dataValues.nombre)
         newRecipe.addDiet(dietDB);
         console.log(newRecipe)

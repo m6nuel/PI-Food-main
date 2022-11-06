@@ -37,3 +37,11 @@ export const getRecipebyId = (id) => {
         }
     }
 }
+
+export const createRecipe = (payload) => {
+    return async () => {
+        const newRecipe = await apiFood.post('/recipe', payload);
+        console.log(newRecipe)
+        return newRecipe;
+    }
+}
