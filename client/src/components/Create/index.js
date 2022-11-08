@@ -34,6 +34,13 @@ export const Create = () => {
     console.log('Receta Creada');
     console.log(form)
     dispatch( createRecipe(form) );
+    setForm({
+      nombre: '',
+      resumen: '',
+      nivelDeComida: '',
+      pasoAPaso: '',
+      dieta: []
+    })
   }
 
   return (
@@ -62,8 +69,11 @@ export const Create = () => {
         </div>
 
         <div>
-          <label> Seleccionar Dietas: </label>
-          <select name='dieta' onChange={ handleSelect }>
+          {/* <label> Seleccionar Dietas: </label> */}
+          <select name='dieta' defaultValue='diet' onChange={ handleSelect }>
+            <option disabled value='diet' >
+              Seleccionar Dietas
+            </option>
             {
               diets.map( dieta => (
                 <option key={ dieta.id } value={ dieta.nombre } >{ dieta.nombre }</option>
