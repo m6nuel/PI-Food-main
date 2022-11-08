@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { CreateRecipe } from './CreateRecipe/CreateRecipe'
 import { Paginate } from './Paginate'
 import { DietFilter } from './DietFilter'
+import { OrdeAlpha } from './OrdeAlpha'
 
 export const Home = () => {
   const { recipes } = useSelector( state => state );
@@ -23,6 +24,7 @@ export const Home = () => {
       <SearchRecipe />
       <CreateRecipe />
       <DietFilter />
+      <OrdeAlpha />
       {
         recipesPage?.map( (recipe, i) => {
           return (

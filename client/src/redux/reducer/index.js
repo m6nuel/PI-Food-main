@@ -1,4 +1,4 @@
-import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID } from "../types";
+import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, ORDE_ALPHA } from "../types";
 
 const initialState = {
     recipes: [
@@ -4799,49 +4799,73 @@ const initialState = {
 
 export default function rootReducers ( state = initialState, { type, payload } ) {
     
-    switch (type) {
-        case GET_RECIPES:
-            return {
-                ...state,
-                recipes: payload,
-                recipesAux: payload
+  switch (type) {
+    case GET_RECIPES:
+      return {
+        ...state,
+        recipes: payload,
+        recipesAux: payload
+      }
+    case GET_DIETS:
+      return {
+          ...state,
+          diets: payload
+      }
+    case GET_RECIPE_ID:
+      return {
+          ...state,
+          detail: payload
+      }
+    case GET_RECIPE_BY_NAME:
+      return {
+          ...state,
+          recipes: payload
+      }
+    case DIETS_FILTER:
+      const dietFilter = state.recipesAux
+      let filterDiets = [];
+        if (payload === 'diet') {
+          filterDiets = dietFilter
+        } else {
+          for (let i = 0; i < dietFilter.length; i++) {
+            let filter = dietFilter[i].tipoDieta.find( d => d === payload )
+            if (filter) {
+              filterDiets.push(dietFilter[i])
             }
-        case GET_DIETS:
-            return {
-                ...state,
-                diets: payload
-            }
-        case GET_RECIPE_ID:
-            return {
-                ...state,
-                detail: payload
-            }
-        case GET_RECIPE_BY_NAME:
-            return {
-                ...state,
-                recipes: payload
-            }
-        case DIETS_FILTER:
-            const dietFilter = state.recipesAux
-            let filterDiets = [];
-              if (payload === 'diet') {
-                filterDiets = dietFilter
-              } else {
-                for (let i = 0; i < dietFilter.length; i++) {
-                  let filter = dietFilter[i].tipoDieta.find( d => d === payload )
-                  if (filter) {
-                    filterDiets.push(dietFilter[i])
-                  }
-                }
-              }
-
-            return {
-                ...state,
-                recipes: filterDiets
-            }
-        
+          }
+        }
+      return {
+        ...state,
+        recipes: filterDiets
+      }
+    case ORDE_ALPHA:
+      const alphaOrde = ( payload === 'az' )
+                          ?
+                        state.recipesAux.sort((a,b) => {
+                          if (a.nombre > b.nombre) {
+                            return 1;
+                          }
+                          if (b.nombre > a.nombre) {
+                            return -1
+                          }
+                          return 0
+                        })
+                          :
+                        state.recipesAux.sort((a,b) => {
+                          if (a.nombre > b.nombre) {
+                            return -1;
+                          }
+                          if (b.nombre > a.nombre) {
+                            return 1
+                          }
+                          return 0
+                        })
+      return {
+        ...state,
+        recipes: alphaOrde
+      }
     
-        default:
-            return state;
-    }
+     default:
+        return state;
+  }
 }
