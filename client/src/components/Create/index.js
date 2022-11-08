@@ -69,7 +69,6 @@ export const Create = () => {
         </div>
 
         <div>
-          {/* <label> Seleccionar Dietas: </label> */}
           <select name='dieta' defaultValue='diet' onChange={ handleSelect }>
             <option disabled value='diet' >
               Seleccionar Dietas

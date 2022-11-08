@@ -1,4 +1,4 @@
-import { GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID } from "../types";
+import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID } from "../types";
 
 const initialState = {
     recipes: [
@@ -4820,6 +4820,24 @@ export default function rootReducers ( state = initialState, { type, payload } )
             return {
                 ...state,
                 recipes: payload
+            }
+        case DIETS_FILTER:
+            const dietFilter = state.recipesAux
+            let filterDiets = [];
+              if (payload === 'diet') {
+                filterDiets = dietFilter
+              } else {
+                for (let i = 0; i < dietFilter.length; i++) {
+                  let filter = dietFilter[i].tipoDieta.find( d => d === payload )
+                  if (filter) {
+                    filterDiets.push(dietFilter[i])
+                  }
+                }
+              }
+
+            return {
+                ...state,
+                recipes: filterDiets
             }
         
     
