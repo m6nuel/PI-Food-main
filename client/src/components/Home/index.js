@@ -7,6 +7,7 @@ import { CreateRecipe } from './CreateRecipe/CreateRecipe'
 import { Paginate } from './Paginate'
 import { DietFilter } from './DietFilter'
 import { OrdeAlpha } from './OrdeAlpha'
+import { HealthScore } from './HealthScore'
 
 export const Home = () => {
   const { recipes } = useSelector( state => state );
@@ -25,6 +26,7 @@ export const Home = () => {
       <CreateRecipe />
       <DietFilter />
       <OrdeAlpha />
+      <HealthScore />
       {
         recipesPage?.map( (recipe, i) => {
           return (

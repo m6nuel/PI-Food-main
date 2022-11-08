@@ -4,3 +4,4 @@ export const GET_RECIPE_ID = 'GET_RECIPE_ID';
 export const GET_RECIPE_BY_NAME = 'GET_RECIPE_BY_NAME';
 export const DIETS_FILTER = 'DIETS_FILTER';
 export const ORDE_ALPHA = 'ORDE_ALPHA';
+export const HEALTH_SCORE = 'HEALTH_SCORE'

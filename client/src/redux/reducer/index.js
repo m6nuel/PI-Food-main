@@ -1,4 +1,4 @@
-import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, ORDE_ALPHA } from "../types";
+import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, HEALTH_SCORE, ORDE_ALPHA } from "../types";
 
 const initialState = {
     recipes: [
@@ -4864,8 +4864,30 @@ export default function rootReducers ( state = initialState, { type, payload } )
         ...state,
         recipes: alphaOrde
       }
+    case HEALTH_SCORE:
+      const healthScore = ( payload === 'hs' )
+                            ?
+                          state.recipesAux.sort( (a, b) => {
+                            if ((a.nivelDeComida - b.nivelDeComida) < 0 ) {
+                              return 1
+                            } else {
+                              return -1
+                            }
+                          })
+                            :
+                          state.recipesAux.sort((a,b) =>{
+                            if ((b.nivelDeComida - a.nivelDeComida) < 0 ) {
+                              return 1
+                            } else {
+                              return -1
+                            }
+                          })
+      return {
+        ...state,
+        recipes: healthScore
+      }
     
-     default:
+    default:
         return state;
   }
 }

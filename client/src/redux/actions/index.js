@@ -1,5 +1,5 @@
 import { apiFood } from "../../api"
-import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, ORDE_ALPHA } from "../types";
+import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, HEALTH_SCORE, ORDE_ALPHA } from "../types";
 
 export const getAllRecipes = () => {
     return async (dispatch) => {
@@ -71,6 +71,13 @@ export const dietsFilter = ( payload ) => {
 export const ordeAlpha = (payload) => {
     return {
         type: ORDE_ALPHA,
+        payload
+    }
+}
+
+export const  healthScore = (payload) => {
+    return {
+        type: HEALTH_SCORE,
         payload
     }
 }
