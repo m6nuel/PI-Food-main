@@ -27,21 +27,23 @@ export const Home = () => {
       <DietFilter />
       <OrdeAlpha />
       <HealthScore />
-      {
-        recipesPage?.map( (recipe, i) => {
-          return (
-            <Link key={i} to={`/detail/${recipe.id}`}>
-              <Card 
-                key={i}
-                id={ recipe.id }
-                image={ recipe.imagen }
-                nombre={ recipe.nombre }
-                tipoDieta={ recipe.tipoDieta }     
-                />
-            </Link>
-          )
-        })
-      }
+      <div>
+        {
+          recipesPage?.map( (recipe, i) => {
+            return (
+              <Link key={i} to={`/detail/${recipe.id}`}>
+                <Card 
+                  key={i}
+                  id={ recipe.id }
+                  image={ recipe.imagen }
+                  nombre={ recipe.nombre }
+                  tipoDieta={ recipe.tipoDieta }     
+                  />
+              </Link>
+            )
+          })
+        }
+      </div>
       <Paginate pageRecipes={ pageRecipes } recipes={ recipes.length } pags={ pags } />
     </>
   )

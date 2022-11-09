@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 
 export const CreateRecipe = () => {
   return (
-    <button>
-        <Link to={'/create'}>
-            Crear Receta
-        </Link>
-    </button>
+    <div>
+      <button>
+          <Link to={'/create'}>
+              Crear Receta
+          </Link>
+      </button>
+    </div>
   )
 }

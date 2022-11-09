@@ -6,16 +6,18 @@ export const Paginate = ({ pageRecipes, recipes, pags }) => {
         numPages.push(i);        
     }
     return (
-        <ul>
-            {
-                numPages && numPages.map( (num, i) => (
-                    <li onClick={ () => pags(num) } key={i}>
-                        <button type='button'>
-                            {num}
-                        </button>
-                    </li>
-                ))
-            }
-        </ul>
+        <div>
+            <ul>
+                {
+                    numPages && numPages.map( (num, i) => (
+                        <li onClick={ () => pags(num) } key={i}>
+                            <button type='button'>
+                                {num}
+                            </button>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
     )
 }
