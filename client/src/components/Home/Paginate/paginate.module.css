@@ -1,0 +1,10 @@
+.pag {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.pag li button {
+    margin: 0 5px 0 5px;
+    cursor: pointer;
+}

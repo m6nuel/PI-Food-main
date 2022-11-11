@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import style from './paginate.module.css';
 
 export const Paginate = ({ pageRecipes, recipes, pags }) => {
     const numPages = [];
@@ -6,8 +7,8 @@ export const Paginate = ({ pageRecipes, recipes, pags }) => {
         numPages.push(i);        
     }
     return (
-        <div>
-            <ul>
+        <>
+            <ul className={`${ style.pag }`}>
                 {
                     numPages && numPages.map( (num, i) => (
                         <li onClick={ () => pags(num) } key={i}>
@@ -18,6 +19,6 @@ export const Paginate = ({ pageRecipes, recipes, pags }) => {
                     ))
                 }
             </ul>
-        </div>
+        </>
     )
 }

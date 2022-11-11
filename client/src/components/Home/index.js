@@ -8,6 +8,7 @@ import { Paginate } from './Paginate'
 import { DietFilter } from './DietFilter'
 import { OrdeAlpha } from './OrdeAlpha'
 import { HealthScore } from './HealthScore'
+import style from './Home.module.css'
 
 export const Home = () => {
   const { recipes } = useSelector( state => state );
@@ -21,13 +22,20 @@ export const Home = () => {
   }
   
   return (
-    <>
-      <SearchRecipe />
-      <CreateRecipe />
-      <DietFilter />
-      <OrdeAlpha />
-      <HealthScore />
-      <div>
+    <div className={`${ style.home }`}>
+      
+      <div className={`${ style.head }`}>
+        <SearchRecipe />
+        <CreateRecipe />
+      </div>      
+      
+      <div className={`${ style.filtros }`}>
+        <DietFilter />
+        <OrdeAlpha />
+        <HealthScore />
+      </div>
+      
+      <div className={`${ style.recipes }`}>
         {
           recipesPage?.map( (recipe, i) => {
             return (
@@ -44,7 +52,9 @@ export const Home = () => {
           })
         }
       </div>
-      <Paginate pageRecipes={ pageRecipes } recipes={ recipes.length } pags={ pags } />
-    </>
+      <div className={`${ style.paginate }`}>
+        <Paginate pageRecipes={ pageRecipes } recipes={ recipes.length } pags={ pags } />
+      </div>
+    </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getRecipeByName } from '../../../redux/actions';
+import style from './Search.module.css'
 
 export const SearchRecipe = () => {
 
@@ -22,7 +23,7 @@ export const SearchRecipe = () => {
     }
 
   return (
-    <div>
+    <div className={`${style.search}`}>
         <input type='text' onChange={ handleChange } placeholder='Buscar receta' />
         <button type='submit' onClick={ handleSubmit }>
             Buscar
