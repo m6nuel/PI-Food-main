@@ -30,9 +30,9 @@ export const Home = () => {
       </div>      
       
       <div className={`${ style.filtros }`}>
-        <DietFilter />
         <OrdeAlpha />
         <HealthScore />
+        <DietFilter />
       </div>
       
       <div className={`${ style.recipes }`}>
