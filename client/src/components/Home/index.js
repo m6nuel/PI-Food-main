@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Card } from './Card/Card'
 import { SearchRecipe } from './SearchRecipe'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { CreateRecipe } from './CreateRecipe/CreateRecipe'
 import { Paginate } from './Paginate'
 import { DietFilter } from './DietFilter'
@@ -39,7 +39,7 @@ export const Home = () => {
         {
           recipesPage?.map( (recipe, i) => {
             return (
-              <Link key={i} to={`/detail/${recipe.id}`}>
+              // <Link key={i} to={`/detail/${recipe.id}`} className={`${ style.link }`}>
                 <Card 
                   key={i}
                   id={ recipe.id }
@@ -47,7 +47,7 @@ export const Home = () => {
                   nombre={ recipe.nombre }
                   tipoDieta={ recipe.tipoDieta }     
                   />
-              </Link>
+              // </Link>
             )
           })
         }

@@ -1,11 +1,11 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import style from './card.module.css';
 
 export const Card = ({ id, image, nombre, tipoDieta, tipoPlato, resumen, nivelDeComida, pasoAPaso }) => {
   return (
     <div className={`${ style.card }`}>
-        {/* <Link key={id} to={`/detail/${id}`}> */}
+        <Link className={`${ style.link }`} key={id} to={`/detail/${id}`}>
           <div className={`${ style.image }`}>
             { image ? <img src={ image } alt='foto'/> : '' }
           </div>
@@ -17,7 +17,7 @@ export const Card = ({ id, image, nombre, tipoDieta, tipoPlato, resumen, nivelDe
             { nivelDeComida ? <h5>Nivel de Comida Saludable: { nivelDeComida }</h5> : '' }
             { pasoAPaso ? <h5>Paso a Paso: { pasoAPaso }</h5>: '' }
           </div>    
-        {/* </Link> */}
+        </Link>
    
     </div>
   )

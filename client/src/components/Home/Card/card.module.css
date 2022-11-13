@@ -7,6 +7,13 @@
     border-radius: 0.2rem;
 }
 
+.link {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    display: flex;
+}
+
 .image {
     width: 50%;
 }
