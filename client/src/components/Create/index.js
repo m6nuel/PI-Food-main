@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { createRecipe } from '../../redux/actions';
+import style from './form.module.css';
 
 export const Create = () => {
   
@@ -44,28 +45,32 @@ export const Create = () => {
   }
 
   return (
-    <>
-      <form id='form' onSubmit={ handleSubmit }>
+    <div className={`${ style.content }`}>
+      <form className={`${ style.form }`} id='form' onSubmit={ handleSubmit }>
       <h3>Nueva Receta</h3>
 
-        <div>
-          <input type='text' value={form.nombre} name='nombre' onChange={ handleChange }/>
+        <div className={`${ style.form_item }`}>
+          <input type='text' value={form.nombre} name='nombre' onChange={ handleChange } required/>
           <label> Nombre de la Receta: </label>
+          <div></div>
         </div>
 
-        <div>
-          <input type='text' value={  form.resumen } name='resumen' onChange={ handleChange }/>
+        <div className={`${ style.form_item }`}>
+          <input type='text' value={  form.resumen } name='resumen' onChange={ handleChange } required/>
           <label> Resumen del Plato: </label>
+          <div></div>
         </div>
 
-        <div>
-          <input type='text' value={  form.nivelDeComida } name='nivelDeComida' onChange={ handleChange }/>
+        <div className={`${ style.form_item }`}>
+          <input type='text' value={  form.nivelDeComida } name='nivelDeComida' onChange={ handleChange } required/>
           <label> Nivel de comida: </label>
+          <div></div>
         </div>
 
-        <div>
-          <input type='text' value={  form.pasoAPaso } name='pasoAPaso' onChange={ handleChange }/>
+        <div className={`${ style.form_item }`}>
+          <input type='text' value={  form.pasoAPaso } name='pasoAPaso' onChange={ handleChange } required/>
           <label> Paso a Paso: </label>
+          <div></div>
         </div>
 
         <div>
@@ -91,6 +96,6 @@ export const Create = () => {
 
         <button type='submit' form='form' >Crear Recera</button>
       </form>
-    </>
+    </div>
   )
 }

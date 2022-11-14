@@ -24,7 +24,8 @@ export const SearchRecipe = () => {
 
   return (
     <div className={`${style.search}`}>
-        <input type='text' onChange={ handleChange } placeholder='Buscar receta' />
+        <input type='text' onChange={ handleChange } required/>
+        <label>Buscar Receta</label>
         <button type='submit' onClick={ handleSubmit }>
             Buscar
         </button>

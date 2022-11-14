@@ -1,0 +1,48 @@
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.form {
+    border: 1px solid black;
+    width: 50%;
+    min-width: 350px;
+    height: 80vh;
+    display: grid;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px gray;
+    /* justify-content: center; */
+}
+
+.form_item {
+    display: grid;
+    position: relative;
+    width: 100%;
+    left: 2rem;
+}
+
+.form_item input {
+    background: none;
+    height: fit-content;
+    padding: 0.2rem 0.1rem;
+    border-radius: 4px;
+    width: 80%;
+    /* border: none; */
+    /* margin: 0 auto 0 auto; */
+}
+
+.form_item label {
+    position: absolute;
+    padding: 0.1rem 0.1rem;
+    left: 0.5rem;
+    z-index: -1;
+    transition: .3s;
+}
+
+.form_item input:focus ~ label, .form_item input:valid ~ label {
+    top: -1rem;
+    font-size: 0.9rem;
+    z-index: 100;
+    background-color: white;
+}

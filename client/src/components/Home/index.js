@@ -25,14 +25,24 @@ export const Home = () => {
     <div className={`${ style.home }`}>
       
       <div className={`${ style.head }`}>
-        <SearchRecipe />
-        <CreateRecipe />
+        <div className={`${ style.create }`}>
+          <CreateRecipe />
+        </div>
+        <div>
+          <SearchRecipe />
+        </div>
       </div>      
       
       <div className={`${ style.filtros }`}>
-        <OrdeAlpha />
-        <HealthScore />
-        <DietFilter />
+        <div className={`${ style.filtro }`}>
+          <DietFilter />
+        </div>
+        <div className={`${ style.filtro }`}>
+          <OrdeAlpha />
+        </div>
+        <div className={`${ style.filtro }`}>
+          <HealthScore />
+        </div>
       </div>
       
       <div className={`${ style.recipes }`}>
@@ -54,6 +64,7 @@ export const Home = () => {
       </div>
       <div className={`${ style.paginate }`}>
         <Paginate pageRecipes={ pageRecipes } recipes={ recipes.length } pags={ pags } />
+        {/* <div>Creado por <span>©&nbsp;</span> Jesus Delgado - 2022</div> */}
       </div>
     </div>
   )
