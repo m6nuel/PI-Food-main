@@ -11,8 +11,7 @@
     height: 80vh;
     display: grid;
     border-radius: 10px;
-    box-shadow: 0 0 10px 5px gray;
-    /* justify-content: center; */
+    box-shadow: 0 0 20px 20px gray;
 }
 
 .form_item {
@@ -20,6 +19,7 @@
     position: relative;
     width: 100%;
     left: 2rem;
+    height: 8vh;
 }
 
 .form_item input {
@@ -27,9 +27,8 @@
     height: fit-content;
     padding: 0.2rem 0.1rem;
     border-radius: 4px;
-    width: 80%;
-    /* border: none; */
-    /* margin: 0 auto 0 auto; */
+    width: 80%;    
+    box-shadow: 0 10px 10px 10px rgb(193, 192, 192);
 }
 
 .form_item label {
@@ -37,6 +36,7 @@
     left: 0.5rem;
     top: 0rem;
     padding: 0.1rem 0.1rem;
+    color: gray;
     z-index: -1;
     transition: .3s;
 }
@@ -46,5 +46,13 @@
     font-size: 0.8rem;
     z-index: 100;
     left: 8px;
+    color: black;
     background-color: white;
+}
+
+.error {
+    color: red;
+    background: none;
+    position: absolute;
+    bottom: 0;
 }
