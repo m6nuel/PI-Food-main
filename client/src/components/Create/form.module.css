@@ -8,10 +8,11 @@
     border: 1px solid black;
     width: 50%;
     min-width: 350px;
-    height: 80vh;
+    height: 90vh;
     display: grid;
     border-radius: 10px;
     box-shadow: 0 0 20px 20px gray;
+    border: none;
 }
 
 .form_item {
@@ -26,7 +27,7 @@
     background: none;
     height: fit-content;
     padding: 0.2rem 0.1rem;
-    border-radius: 4px;
+    border-radius: 5px;
     width: 80%;    
     box-shadow: 0 10px 10px 10px rgb(193, 192, 192);
 }
@@ -42,12 +43,35 @@
 }
 
 .form_item input:focus ~ label, .form_item input:valid ~ label {
-    top: -1rem;
+    top: -1.1rem;
     font-size: 0.8rem;
     z-index: 100;
     left: 8px;
     color: black;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+}
+
+.form_item select {
+    display: flex;
+    margin-top: -30px;
+    justify-content: flex-start;
+    box-shadow: 0 5px 5px 5px rgb(193, 192, 192);
+    border-radius: 5px;
+}
+
+.dietas {
+    max-height: 10vh;
+    display: grid;
+    max-width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+}
+
+.diet {
+    box-shadow: 1px 1px 1px 1px rgb(170, 234, 255);
+    margin: auto;
+    border-radius: 5px;
+    z-index: 50;
 }
 
 .error {
@@ -55,4 +79,22 @@
     background: none;
     position: absolute;
     bottom: 0;
+}
+
+.form_boton {
+    border-radius: 5px;
+    width: 50%;
+    height: 8vh;
+    margin: auto;
+}
+
+.form_boton {
+    background-color: rgb(170, 234, 255);
+    box-shadow: 1px 1px 1px 1px rgb(117, 161, 175);
+    border: none;
+}
+
+.form_boton:hover {
+    background-color: rgb(141, 222, 249);
+    box-shadow: 2px 2px 2px 2px rgb(117, 161, 175);
 }
