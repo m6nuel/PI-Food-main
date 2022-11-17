@@ -5,9 +5,15 @@
     height: 80%;
     box-shadow: 0 0 10px 5px gray;
     display: flex;
-    margin: 1rem;
+    margin: auto;
+    margin-top: 2rem;
     border-radius: 0.2rem;
+    object-fit: cover;
     overflow: auto;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px 10px gray;
 }
 
 .link {
@@ -23,16 +29,20 @@
     max-width: 20vw;
     max-height: 60vh;
     overflow-y: scroll;
+    text-align: justify;
+    padding: auto;
+    margin-right: 1rem;
 }
 
 .resumen h5 {
     margin: auto;
+    max-width: 20vw;
 }
-
+/* 
 .link:hover ~ .image img{
     padding: 0;
     background-color: black;
-}
+} */
 
 .card .body {
     display: flex;
@@ -46,6 +56,10 @@
 .descrip {
     overflow-y: scroll;
     max-height: 60vh;
+    max-width: 20vw;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: justify;
 }
 
 .descrip h5 {
@@ -59,6 +73,7 @@
 
 .image {
     padding-bottom: 0.4rem;
+    /* min-width: 40vw; */
     max-height: 60vh;
     object-fit: contain;
     width: 100%;

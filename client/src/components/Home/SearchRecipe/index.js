@@ -16,7 +16,9 @@ export const SearchRecipe = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(`Buscando ${search}`)
-        if (search) {
+        if (!search) {
+            alert('No hay')
+        } else {
             dispatch( getRecipeByName( search ) );
         }
         setSearch('');

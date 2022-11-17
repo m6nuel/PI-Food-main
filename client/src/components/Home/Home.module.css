@@ -51,6 +51,10 @@
     border-radius: 0.2rem;
 }
 
+.filtro select:hover {
+    box-shadow: 0 0 10px 10px gray;
+}
+
 .recipes:nth-child(3) {
     grid-column: 2 / 4;
     grid-row: 2 / 3 ;

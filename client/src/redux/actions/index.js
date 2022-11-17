@@ -49,7 +49,7 @@ export const createRecipe = (payload) => {
 export const getRecipeByName = (name) => {
     return async (dispatch) => {
         try {
-            let recipesByName = await apiFood.get(`/recipe?name=${name}`);
+            var recipesByName = await apiFood.get(`/recipe?name=${name}`);
             console.log(recipesByName);
             dispatch({
                 type: GET_RECIPE_BY_NAME,
@@ -57,6 +57,11 @@ export const getRecipeByName = (name) => {
             })
         } catch (error) {
             console.log(error)
+            dispatch({
+                type: GET_RECIPE_BY_NAME,
+                // renderizar algo valido si no se encuentra la busqueda
+                payload: recipesByName.data
+            })
         }
     }
 }
