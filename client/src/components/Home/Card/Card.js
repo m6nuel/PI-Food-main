@@ -6,16 +6,25 @@ export const Card = ({ id, image, nombre, tipoDieta, tipoPlato, resumen, nivelDe
   return (
     <div className={`${ style.card }`}>
         <Link className={`${ style.link }`} key={id} to={`/detail/${id}`}>
-          <div className={`${ style.image }`}>
-            { image ? <img src={ image } alt='foto'/> : '' }
-          </div>
+            { nombre ? <span>{ nombre }</span> : '' }
           <div className={`${ style.body }`}>
-            { nombre ? <h5>Nombre: { nombre }</h5> : '' }
-            { tipoDieta ? <h5>Tipo de Dieta: { tipoDieta }</h5> : '' }
-            { tipoPlato ? <h5>Tipo de Plato: { tipoPlato }</h5>: '' }
-            { resumen ? <h5>resumen: { resumen }</h5> : '' }
-            { nivelDeComida ? <h5>Nivel de Comida Saludable: { nivelDeComida }</h5> : '' }
-            { pasoAPaso ? <h5>Paso a Paso: { pasoAPaso }</h5>: '' }
+            <div className={`${ style.resumen }`}>
+            { resumen ? <h5> Resumen: </h5> : '' }
+              { resumen ? <span dangerouslySetInnerHTML={{ __html: resumen }} ></span> : '' }
+            </div>
+            <div className={`${ style.image }`}>
+              { image ? <img src={ image } alt='foto'/> : '' }
+            </div>
+            <div className={`${ style.descrip }`}>
+              { tipoDieta ? <h5>Tipo de Dieta:</h5>: ''}
+              { tipoDieta ? <div className={`${ style.diet }`}> { tipoDieta }</div> : '' }
+              { tipoPlato ? <h5>Tipo de Plato:</h5>: ''}
+              { tipoPlato ? <div> { tipoPlato } </div>: '' }
+              { nivelDeComida ? <h5>Nivel de Comida Saludable:</h5>: ''}
+              { nivelDeComida ? <div> { nivelDeComida }</div> : '' }
+              { pasoAPaso ? <h5>Paso a Paso:</h5>: ''}
+              { pasoAPaso ? <div> { pasoAPaso }</div>: '' }
+            </div>  
           </div>    
         </Link>
    
