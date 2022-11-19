@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card } from './Card/Card'
 import { SearchRecipe } from './SearchRecipe'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 // import { Link } from 'react-router-dom'
 import { CreateRecipe } from './CreateRecipe/CreateRecipe'
 import { Paginate } from './Paginate'
@@ -9,9 +9,11 @@ import { DietFilter } from './DietFilter'
 import { OrdeAlpha } from './OrdeAlpha'
 import { HealthScore } from './HealthScore'
 import style from './Home.module.css'
+import { cleanDetail } from '../../redux/actions'
 
 export const Home = () => {
   const { recipes } = useSelector( state => state );
+  const dispatch = useDispatch();
   const [pag, setPag] = useState(1);
   const pageRecipes = 9;
   const lastIndex = pag * pageRecipes;
@@ -20,6 +22,11 @@ export const Home = () => {
   const pags = (num) => {
     return setPag(num)
   }
+
+  useEffect(() => {
+    dispatch( cleanDetail() )
+  }, [dispatch])
+  
   
   return (
     <div className={`${ style.home }`}>
@@ -49,7 +56,7 @@ export const Home = () => {
         {
           recipesPage?.map( (recipe, i) => {
             return (
-              // <Link key={i} to={`/detail/${recipe.id}`} className={`${ style.link }`}>
+              // <Link className={`${ style.link }`} key={i} to={`/detail/${recipe.id}`} >
                 <Card 
                   key={i}
                   id={ recipe.id }

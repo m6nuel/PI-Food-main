@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getRecipeByName } from '../../../redux/actions';
-import style from './Search.module.css'
+import { getAllRecipes, getRecipeByName } from '../../../redux/actions';
+import style from './Search.module.css';
+import swal from 'sweetalert';
 
 export const SearchRecipe = () => {
 
@@ -16,10 +17,13 @@ export const SearchRecipe = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(`Buscando ${search}`)
-        if (!search) {
-            alert('No hay')
-        } else {
+        if (search) {
             dispatch( getRecipeByName( search ) );
+        }
+        console.log(search)
+        if(search.data === "Receta no encontrada") {
+            swal("Resultado de la busqueda", "Receta no encontrada", "warning")
+            dispatch( getAllRecipes() );
         }
         setSearch('');
     }

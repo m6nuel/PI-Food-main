@@ -16,7 +16,7 @@ export const Detail = () => {
 
   return (
     <>
-      <Card 
+      <Card
         key={detail.id}
         image={ detail.imagen }
         nombre={ detail.nombre }

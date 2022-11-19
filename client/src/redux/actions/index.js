@@ -1,5 +1,5 @@
 import { apiFood } from "../../api"
-import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, HEALTH_SCORE, ORDE_ALPHA } from "../types";
+import { CLEAN_DETAIL, DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, HEALTH_SCORE, ORDE_ALPHA } from "../types";
 
 export const getAllRecipes = () => {
     return async (dispatch) => {
@@ -56,11 +56,12 @@ export const getRecipeByName = (name) => {
                 payload: recipesByName.data
             })
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            let recipes = await apiFood.get('/recipes');
             dispatch({
-                type: GET_RECIPE_BY_NAME,
+                type: GET_RECIPES,
                 // renderizar algo valido si no se encuentra la busqueda
-                payload: recipesByName.data
+                payload: recipes.data
             })
         }
     }
@@ -84,5 +85,11 @@ export const  healthScore = (payload) => {
     return {
         type: HEALTH_SCORE,
         payload
+    }
+}
+
+export const cleanDetail = () => {
+    return {
+        type: CLEAN_DETAIL
     }
 }

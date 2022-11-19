@@ -32,17 +32,13 @@
     text-align: justify;
     padding: auto;
     margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 .resumen h5 {
     margin: auto;
     max-width: 20vw;
 }
-/* 
-.link:hover ~ .image img{
-    padding: 0;
-    background-color: black;
-} */
 
 .card .body {
     display: flex;
@@ -59,7 +55,7 @@
     max-width: 20vw;
     margin-left: 1rem;
     margin-right: 1rem;
-    text-align: justify;
+    text-align: start;
 }
 
 .descrip h5 {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { createRecipe } from '../../redux/actions';
 import style from './form.module.css';
+import swal from 'sweetalert';
 
 const validate = ( form ) => {
   let errors = {};
@@ -69,6 +70,7 @@ export const Create = () => {
       pasoAPaso: '',
       dieta: []
     })
+    swal("Nueva Receta", "Se ha Creado con exito la nueva receta", "success",{buttons: false})
   }
 
   return (

@@ -1,4 +1,4 @@
-import { DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, HEALTH_SCORE, ORDE_ALPHA } from "../types";
+import { CLEAN_DETAIL, DIETS_FILTER, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_NAME, GET_RECIPE_ID, HEALTH_SCORE, ORDE_ALPHA } from "../types";
 
 const initialState = {
     recipes: [
@@ -4885,6 +4885,11 @@ export default function rootReducers ( state = initialState, { type, payload } )
       return {
         ...state,
         recipes: healthScore
+      }
+    case CLEAN_DETAIL:
+      return {
+        ...state,
+        detail: []
       }
     
     default:
