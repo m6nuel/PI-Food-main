@@ -7,7 +7,8 @@ import { getRecipebyId } from '../../redux/actions';
 export const Detail = () => {
   let {id} = useParams();
   let dispatch = useDispatch();
-  const { detail } = useSelector( state => state )
+  const { detail } = useSelector( state => state );
+
   
   useEffect(() => {
     dispatch(getRecipebyId(id))
