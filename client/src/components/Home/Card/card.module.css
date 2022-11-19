@@ -25,14 +25,12 @@
 }
 
 .resumen {
-    padding: 0.2rem;
     max-width: 20vw;
     max-height: 60vh;
     overflow-y: scroll;
     text-align: justify;
     padding: auto;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    /* margin-left: 0.5rem; */
 }
 
 .resumen h5 {
@@ -73,6 +71,7 @@
     max-height: 60vh;
     object-fit: contain;
     width: 100%;
+    margin-left: 0.5rem;
 }
 
 .image img {

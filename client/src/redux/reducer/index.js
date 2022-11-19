@@ -4794,7 +4794,8 @@ const initialState = {
     // recipes: [],
     // recipesAux: [],
     // diets: [],
-    detail: []
+    detail: [],
+    loading: false
 }
 
 export default function rootReducers ( state = initialState, { type, payload } ) {

@@ -56,7 +56,6 @@ export const Home = () => {
         {
           recipesPage?.map( (recipe, i) => {
             return (
-              // <Link className={`${ style.link }`} key={i} to={`/detail/${recipe.id}`} >
                 <Card 
                   key={i}
                   id={ recipe.id }
@@ -64,7 +63,6 @@ export const Home = () => {
                   nombre={ recipe.nombre }
                   tipoDieta={ recipe.tipoDieta }     
                   />
-              // </Link>
             )
           })
         }
