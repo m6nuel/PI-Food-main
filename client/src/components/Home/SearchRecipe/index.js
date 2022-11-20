@@ -20,6 +20,7 @@ export const SearchRecipe = () => {
         if (search) {
             dispatch( getRecipeByName( search ) );
         }
+        // poner aqui si la busqueda esta vacia renderizar todo nuevamente db
         console.log(search)
         if(search.data === "Receta no encontrada") {
             swal("Resultado de la busqueda", "Receta no encontrada", "warning")
