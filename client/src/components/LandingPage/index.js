@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
-// import { useDispatch } from 'react-redux'
-// import { getAllDiets, getAllRecipes } from '../../redux/actions';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './Landing.module.css';
 import image from '../../imagenes/imagen7.jpg'
+import { getAllDiets, getAllRecipes } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
 
 export const LandingPage = () => {
-    // Mientras hago el diseño para no consumir el limite diario de la API
-    // const dispatch = useDispatch();
-    // useEffect(() => {
-    //     dispatch(getAllRecipes());
-    //     dispatch(getAllDiets());
-    // }, [dispatch])
-    
+
+    const dispatch = useDispatch();
+// acomodar esto en la mañana
+    const handleClick = () => {
+        dispatch(getAllRecipes());
+        dispatch(getAllDiets());
+    }
 
     return (
         <>
@@ -21,7 +21,7 @@ export const LandingPage = () => {
             </div>
             <div className={`${ style.button }`}>
                 <Link to='/home'>
-                    <button>
+                    <button className={`${ style.but }`} onClick={ handleClick() }>
                         A Cocinar
                     </button>
                 </Link>

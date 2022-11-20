@@ -14,7 +14,7 @@
     z-index: 100;
 }
 
-button {
+.but {
     width: 10rem;
     background: none;
     border-radius: 5px;

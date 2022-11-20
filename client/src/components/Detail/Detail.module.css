@@ -1,13 +1,15 @@
-.detail {
+.det {
     height: 100vh;
-    width: 100vw;
-    /* background: none; */
-    position: relative;
-    z-index: 100;
-
+    cursor: default;
 }
 
-Card {
-    position: absolute;
-    z-index: -1;
+.volver {
+    margin: 1rem;
+    box-shadow: 0 0 10px 5px gray;
+    width: 20rem;
+}
+
+.volver a {
+    text-decoration: none;
+    color: black;
 }

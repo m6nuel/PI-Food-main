@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Card } from './Card/Card'
 import { SearchRecipe } from './SearchRecipe'
 import { useDispatch, useSelector } from 'react-redux'
-// import { Link } from 'react-router-dom'
+import { getAllDiets, getAllRecipes } from '../../redux/actions';
 import { CreateRecipe } from './CreateRecipe/CreateRecipe'
 import { Paginate } from './Paginate'
 import { DietFilter } from './DietFilter'
@@ -26,7 +26,16 @@ export const Home = () => {
   useEffect(() => {
     dispatch( cleanDetail() )
   }, [dispatch])
-  
+
+  // if (recipes.length > 0) {
+  //   return
+  // } else {    
+  //   useEffect(() => {
+  //       dispatch(getAllRecipes());
+  //       dispatch(getAllDiets());
+  //   }, [dispatch])
+  // }
+    
   
   return (
     <div className={`${ style.home }`}>
@@ -53,7 +62,7 @@ export const Home = () => {
       </div>
       
       <div className={`${ style.recipes }`}>
-        {
+        { recipesPage.length > 0 ?
           recipesPage?.map( (recipe, i) => {
             return (
                 <Card 
@@ -65,6 +74,8 @@ export const Home = () => {
                   />
             )
           })
+          : 
+           <div> cargando</div>
         }
       </div>
       <div className={`${ style.paginate }`}>
