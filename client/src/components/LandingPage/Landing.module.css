@@ -1,0 +1,27 @@
+.image img {
+    box-shadow: 0 15px 45px 45px gray;
+    border-radius: 5px;
+    margin-top: 4rem;
+    position: relative;
+    z-index: -1;
+
+}
+
+.button a button {
+    box-shadow: 0 0 10px 5px gray;
+    top: 16.5rem;
+    position: absolute;
+    z-index: 100;
+}
+
+button {
+    width: 10rem;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto 0 auto;
+}
+
+.button a button:hover {
+    box-shadow: 0 0 45px 45px rgba(204, 204, 204, 0.562);
+}
