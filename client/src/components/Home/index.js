@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Card } from './Card/Card'
 import { SearchRecipe } from './SearchRecipe'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllDiets, getAllRecipes } from '../../redux/actions';
 import { CreateRecipe } from './CreateRecipe/CreateRecipe'
 import { Paginate } from './Paginate'
 import { DietFilter } from './DietFilter'
@@ -27,16 +26,6 @@ export const Home = () => {
     dispatch( cleanDetail() )
   }, [dispatch])
 
-  // if (recipes.length > 0) {
-  //   return
-  // } else {    
-  //   useEffect(() => {
-  //       dispatch(getAllRecipes());
-  //       dispatch(getAllDiets());
-  //   }, [dispatch])
-  // }
-    
-  
   return (
     <div className={`${ style.home }`}>
       

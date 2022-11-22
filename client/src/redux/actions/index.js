@@ -26,7 +26,6 @@ export const getRecipebyId = (id) => {
     return async (dispatch) => {
         try {
             let {data} = await apiFood.get(`/recipes/${id}`);
-            console.log(data[0]);
             return dispatch({
                 type: GET_RECIPE_ID,
                 payload: data[0]
@@ -40,7 +39,6 @@ export const getRecipebyId = (id) => {
 export const createRecipe = (payload) => {
     return async () => {
         const newRecipe = await apiFood.post('/recipe', payload);
-        console.log(newRecipe)
         return newRecipe;
     }
 }

@@ -7,7 +7,6 @@ export const DietFilter = () => {
   const dispatch = useDispatch();  
   const { diets } = useSelector( state => state )
     const handleSelect = (e) => {
-        console.log( e.target.value)
         dispatch( dietsFilter(e.target.value) )
     }
   

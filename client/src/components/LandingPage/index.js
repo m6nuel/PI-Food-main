@@ -21,7 +21,7 @@ export const LandingPage = () => {
             </div>
             <div className={`${ style.button }`}>
                 <Link to='/home'>
-                    <button className={`${ style.but }`} onClick={ handleClick() }>
+                    <button className={`${ style.but }`} onClick={ handleClick }>
                         A Cocinar
                     </button>
                 </Link>
