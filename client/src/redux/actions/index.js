@@ -14,7 +14,6 @@ export const getAllRecipes = () => {
 export const getAllDiets = () => {
     return async (dispatch) => {
         let diets = await apiFood.get('/diets');
-        console.log(diets)
         return dispatch({
             type: GET_DIETS,
             payload: diets.data
