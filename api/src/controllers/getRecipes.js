@@ -29,7 +29,7 @@ const getRecipes = async () => {
             return recipes;
     } catch (error) {
         console.log(error)
-        return 'No funciona la Api'
+        return [error.message]
     }    
 }
 
