@@ -80,25 +80,25 @@ export const Create = () => {
       <h3>Nueva Receta</h3>
 
         <div className={`${ style.form_item }`}>
-          <input type='text' value={form.nombre} name='nombre' onChange={ handleChange } required/>
+          <input type='text' value={form.nombre} name='nombre' onChange={ handleChange } autoComplete='off' required/>
           <label> Nombre de la Receta: </label>
           <div className={`${ style.error }`}> { errors.nombre && errors.nombre } </div>
         </div>
 
         <div className={`${ style.form_item }`}>
-          <input type='text' value={  form.resumen } name='resumen' onChange={ handleChange } required/>
+          <input type='text' value={  form.resumen } name='resumen' onChange={ handleChange } autoComplete='off' required/>
           <label> Resumen del Plato: </label>
           <div className={`${ style.error }`}> { errors.resumen && errors.resumen } </div>
         </div>
 
         <div className={`${ style.form_item }`}>
-          <input type='text' value={  form.nivelDeComida } name='nivelDeComida' onChange={ handleChange } required/>
+          <input type='text' value={  form.nivelDeComida } name='nivelDeComida' onChange={ handleChange } autoComplete='off' required/>
           <label> Nivel de comida: </label>
           {/* <div className={`${ style.error }`}>nombre de la Receta</div> */}
         </div>
 
         <div className={`${ style.form_item }`}>
-          <input type='text' value={  form.pasoAPaso } name='pasoAPaso' onChange={ handleChange } required/>
+          <input type='text' value={  form.pasoAPaso } name='pasoAPaso' onChange={ handleChange } autoComplete='off' required/>
           <label> Paso a Paso: </label>
           {/* <div className={`${ style.error }`}>nombre de la Receta</div> */}
         </div>
