@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { createRecipe } from '../../redux/actions';
+import { createRecipe, getAllRecipes } from '../../redux/actions';
 import style from './form.module.css';
 import swal from 'sweetalert';
 
@@ -71,6 +71,7 @@ export const Create = () => {
       dieta: []
     })
     swal("Nueva Receta", "Se ha Creado con exito la nueva receta", "success",{buttons: false})
+    dispatch( getAllRecipes() );
   }
 
   return (

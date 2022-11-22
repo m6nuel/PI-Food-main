@@ -9,7 +9,8 @@ module.exports = (sequelize) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
-      // type: DataTypes.STRING,
+      // type: DataTypes.INTEGER,
+      // primaryKey: true,
       // autoIncrement: true,
       // get(){
       //   return `db-${this.getDataValue('id')}`

@@ -5,9 +5,10 @@ const router = Router();
 
 router.post('/', async (req, res) => {
     try {
-        let { nombre, resumen, nivelDeComida, pasoAPaso, dieta } = req.body
+        let { id, nombre, resumen, nivelDeComida, pasoAPaso, dieta } = req.body
 
             let newRecipe = await Recipe.create({
+            id,
             nombre,
             resumen,
             nivelDeComida,
