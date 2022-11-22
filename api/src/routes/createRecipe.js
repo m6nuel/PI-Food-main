@@ -16,8 +16,7 @@ router.post('/', async (req, res) => {
         let dietDB = await Diet.findAll({ 
             where: {nombre: dieta}
         })
-        console.log(dietDB)
-        // console.log(newRecipe.dataValues.nombre)
+
         newRecipe.addDiet(dietDB);
         console.log(newRecipe)
         res.status(200).send(newRecipe);

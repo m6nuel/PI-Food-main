@@ -27,7 +27,7 @@ const getDetail = async (id) => {
         }
     } catch (error) {
         console.log(error);
-        return 'ID NO ENCONTRADO'
+        return ['ID NO ENCONTRADO']
     }
 }
 

@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         try {
             const recipeByName = allRecipes.filter(recipe => recipe.nombre.toLowerCase().includes(name.toLowerCase()));
             console.log(recipeByName.length)
-            res.json(recipeByName.length > 0 ? recipeByName : 'Receta no encontrada')
+            res.json(recipeByName.length > 0 ? recipeByName : ['Receta no encontrada'])
         } catch (error) {
             res.send(e)    
         }
